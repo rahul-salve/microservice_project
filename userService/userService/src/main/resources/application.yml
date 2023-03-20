@@ -1,0 +1,25 @@
+server:
+  port: 8082
+spring:
+  config:
+    import: optional:configserver:http://localhost:8086/
+
+ # profiles:
+ #   active: prod
+  datasource:
+    url: jdbc:postgresql://localhost:5432/micro
+    username: postgres
+    password: System
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  application:
+      name: USER-SERVICE
+#eureka:
+#  instance:
+#  client:
+#   register-with-eureka: true
+#   serviceUrl:
+#     defaultZone: http://localhost:9090/eureka/
